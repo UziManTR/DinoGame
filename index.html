@@ -32,7 +32,7 @@ for(let i=0;i<18;i++){let z=((i/18+progress*.58)%1),yy=hz+(h-hz)*z*z,half=w*(.05
 seed=14;for(let i=0;i<260;i++){let z=rand(),xx=w*(.25+rand()*.5),yy=hz+(h-hz)*z*z;if(xx>w*.32&&xx<w*.68){g.fillStyle=rand()>.5?'#d0c7ac38':'#1118174a';g.fillRect(xx,yy,1+z*2,1+z*2)}}
 // road markings perspective
 for(let i=0;i<9;i++){let z=((i/9+progress*.38)%1),yy=hz+(h-hz)*z*z,ww=w*.006*z*z;g.fillStyle='#c8bda0';g.fillRect(vp-ww/2,yy,Math.max(1,ww),2+22*z*z)}
-['L','R'].forEach(side=>{for(let j=0;j<6;j++){let z=((j/6+progress*.19)%1),base=hz+(h*.98-hz)*z*z,scale=.08+z*1.45,bw=w*(.10+.16*z*z),bh=h*(.15+.72*z*z),bx=side==='L'?vp-w*.055*z-bw:vp+w*.055*z;facade(bx,base,bw,bh,side,j+Math.floor(progress*4));if(z>.2){g.fillStyle='#d6a95d';g.fillRect(side==='L'?bx+bw-7*scale:bx+4*scale,base-bh*.56,3*scale,7*scale)}}
+['L','R'].forEach(side=>{for(let j=0;j<6;j++){let z=((j/6+progress*.19)%1),base=hz+(h*.98-hz)*z*z,scale=.08+z*1.45,bw=w*(.10+.16*z*z),bh=h*(.15+.72*z*z),bx=side==='L'?vp-w*.20*z*z-bw:vp+w*.20*z*z;facade(bx,base,bw,bh,side,j+Math.floor(progress*4));if(z>.2){g.fillStyle='#d6a95d';g.fillRect(side==='L'?bx+bw-7*scale:bx+4*scale,base-bh*.56,3*scale,7*scale)}}
 // streetlights
 for(let j=0;j<3;j++){let z=((j/3+progress*.2)%1),base=hz+(h*.92-hz)*z*z,scale=.12+z*1.4,lx=side==='L'?vp-w*.12*scale:vp+w*.12*scale;line(lx,base,lx,base-h*.19*scale,'#343b39',Math.max(1,3*scale));line(lx,base-h*.19*scale,lx+(side==='L'?1:-1)*13*scale,base-h*.19*scale,'#343b39',Math.max(1,3*scale));g.fillStyle='#c7b68b';g.fillRect(lx+(side==='L'?8:-12)*scale,base-h*.195*scale,5*scale,3*scale)}});
 // cracks on asphalt
